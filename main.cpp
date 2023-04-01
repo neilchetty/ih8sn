@@ -48,6 +48,18 @@ int main(int argc, char *argv[]) {
         property_override(property_list("ro.product.", "name"), config.product_name.c_str());
     }
 
+    if (is_init_stage && config.product_model != "") {
+        property_override(property_list("ro.product.", "model"), config.product_model.c_str());
+    }
+
+    if (is_init_stage && config.product_brand != "") {
+        property_override(property_list("ro.product.", "brand"), config.product_brand.c_str());
+    }
+
+    if (is_init_stage && config.product_device != "") {
+        property_override(property_list("ro.product.", "device"), config.product_device.c_str());
+    }
+
     if (is_init_stage) {
         property_override("ro.debuggable", "0");
         property_override(property_list("ro.", "build.tags"), "release-keys");

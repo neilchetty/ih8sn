@@ -10,13 +10,19 @@ struct Config {
             const std::string build_version_release = "",
             const std::string build_version_release_or_codename = "",
             const std::string manufacturer_name = "",
-            const std::string product_name = ""
+            const std::string product_name = "",
+            const std::string product_model = "",
+            const std::string product_brand = "",
+            const std::string product_device = ""
     ) : build_fingerprint(build_fingerprint),
         build_security_patch_date(build_security_patch_date),
         build_version_release(build_version_release),
         build_version_release_or_codename(build_version_release_or_codename),
         manufacturer_name(manufacturer_name),
-        product_name(product_name) {}
+        product_name(product_name),
+        product_model(product_model),
+        product_brand(product_brand),
+        product_device(product_device) {}
 
     const std::string build_fingerprint;
     const std::string build_security_patch_date;
@@ -24,6 +30,9 @@ struct Config {
     const std::string build_version_release_or_codename;
     const std::string manufacturer_name;
     const std::string product_name;
+    const std::string product_model;
+    const std::string product_brand;
+    const std::string product_device;
 
     const std::string get_build_description() const;
 
